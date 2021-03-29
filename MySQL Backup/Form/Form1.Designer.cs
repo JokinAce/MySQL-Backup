@@ -50,6 +50,7 @@ namespace MySQL_Backup {
             this.RestoreButton = new System.Windows.Forms.Button();
             this.MinimizedBox = new System.Windows.Forms.NotifyIcon(this.components);
             this.BackupWorker = new System.ComponentModel.BackgroundWorker();
+            this.FileDialog = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // ConsoleTextBox
@@ -58,10 +59,10 @@ namespace MySQL_Backup {
             this.ConsoleTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
             this.ConsoleTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ConsoleTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.ConsoleTextBox.Location = new System.Drawing.Point(0, 271);
+            this.ConsoleTextBox.Location = new System.Drawing.Point(12, 271);
             this.ConsoleTextBox.Name = "ConsoleTextBox";
             this.ConsoleTextBox.ReadOnly = true;
-            this.ConsoleTextBox.Size = new System.Drawing.Size(769, 174);
+            this.ConsoleTextBox.Size = new System.Drawing.Size(744, 160);
             this.ConsoleTextBox.TabIndex = 0;
             this.ConsoleTextBox.Text = "";
             // 
@@ -286,7 +287,12 @@ namespace MySQL_Backup {
             // 
             // BackupWorker
             // 
+            this.BackupWorker.WorkerSupportsCancellation = true;
             this.BackupWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackupWorker_DoWork);
+            // 
+            // FileDialog
+            // 
+            this.FileDialog.FileName = "FileDialog";
             // 
             // MainForm
             // 
@@ -348,6 +354,7 @@ namespace MySQL_Backup {
         private System.Windows.Forms.Button RestoreButton;
         private System.Windows.Forms.NotifyIcon MinimizedBox;
         private BackgroundWorker BackupWorker;
+        private System.Windows.Forms.OpenFileDialog FileDialog;
     }
 }
 

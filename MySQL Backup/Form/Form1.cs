@@ -56,9 +56,9 @@ namespace MySQL_Backup {
             }
         }
 
-        private void Log(string Message) {
-            ConsoleTextBox.AppendText($"[{DateTime.Now}] " + Message + "\n");
-        }
+        private void Log(string Message) => ConsoleTextBox.AppendText($"[{DateTime.Now}] " + Message + "\n");
+
+        private void ForceBackupButton_Click(object sender, EventArgs e) => Backup();
 
         private async void SaveConfigButton_ClickAsync(object sender, EventArgs e) {
             Config.IP = IPTextBox.Text;
@@ -100,10 +100,25 @@ namespace MySQL_Backup {
         }
 
         private void RestoreButton_Click(object sender, EventArgs e) {
-        }
+            try {
+                FileDialog.ShowDialog();
 
-        private void ForceBackupButton_Click(object sender, EventArgs e) {
-            Backup();
+                using MySqlConnection conn = new($"Server={Config.IP}; Port={Config.Port}; database={Config.Database}; UID={Config.Username}; password={Config.Passwort};charset=utf8;convertzerodatetime=true;");
+                using MySqlCommand cmd = new();
+                using MySqlBackup mb = new(cmd); cmd.Connection = conn;
+                conn.Open();
+
+                if (FileDialog.CheckFileExists && FileDialog.CheckPathExists) {
+                    mb.ImportFromStream(FileDialog.OpenFile());
+                    Log("Datei gefunden und importiert.");
+                } else {
+                    Log("Datei nicht gefunden.");
+                }
+
+                conn.Close();
+            } catch (Exception Error) {
+                Log($"Backup fehlgeschlagen. {Error.Message}");
+            }
         }
 
         private void MinimizedBox_MouseDoubleClick(object sender, MouseEventArgs e) {
