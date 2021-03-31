@@ -34,19 +34,20 @@ namespace MySQL_Backup {
         }
 
         private void Backup() {
-            try {
-                using MySqlConnection conn = new($"Server={Config.IP}; Port={Config.Port}; database={Config.Database}; UID={Config.Username}; password={Config.Passwort};charset=utf8;convertzerodatetime=true;");
-                using MySqlCommand cmd = new();
-                using MySqlBackup mb = new(cmd); cmd.Connection = conn;
-                conn.Open();
+            _ = Task.Run(() => {
+                try {
 
-                string Backup = mb.ExportToString();
-                File.WriteAllText($"./backups/db-{DateTime.Now:d/M/yyyy}-{DateTime.Now:HH,mm}-{Config.Database}.sql", Backup);
-
-                conn.Close();
-            } catch (Exception Error) {
-                Log($"Backup fehlgeschlagen. {Error.Message}");
-            }
+                    using MySqlConnection conn = new($"Server={Config.IP}; Port={Config.Port}; database={Config.Database}; UID={Config.Username}; password={Config.Passwort};charset=utf8;convertzerodatetime=true;");
+                    using MySqlCommand cmd = new();
+                    using MySqlBackup mb = new(cmd); cmd.Connection = conn;
+                    conn.Open();
+                    mb.ExportToFile($"./backups/db-{DateTime.Now:d/M/yyyy}-{DateTime.Now:HH,mm}-{Config.Database}.sql");
+                    conn.Close();
+                    Log("Backup erfolgreich.");
+                } catch (Exception Error) {
+                    Log($"Backup fehlgeschlagen. {Error}");
+                }
+            });
         }
 
         private void BackupWorker_DoWork(object sender, DoWorkEventArgs e) {
@@ -117,7 +118,7 @@ namespace MySQL_Backup {
 
                 conn.Close();
             } catch (Exception Error) {
-                Log($"Backup fehlgeschlagen. {Error.Message}");
+                Log($"Backup fehlgeschlagen. {Error}");
             }
         }
 

@@ -62,7 +62,7 @@ namespace MySQL_Backup {
             this.ConsoleTextBox.Location = new System.Drawing.Point(12, 271);
             this.ConsoleTextBox.Name = "ConsoleTextBox";
             this.ConsoleTextBox.ReadOnly = true;
-            this.ConsoleTextBox.Size = new System.Drawing.Size(744, 160);
+            this.ConsoleTextBox.Size = new System.Drawing.Size(559, 160);
             this.ConsoleTextBox.TabIndex = 0;
             this.ConsoleTextBox.Text = "";
             // 
@@ -194,6 +194,7 @@ namespace MySQL_Backup {
             // 
             // SaveConfigButton
             // 
+            this.SaveConfigButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
             this.SaveConfigButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(28)))), ((int)(((byte)(37)))));
             this.SaveConfigButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveConfigButton.Location = new System.Drawing.Point(12, 226);
@@ -201,55 +202,59 @@ namespace MySQL_Backup {
             this.SaveConfigButton.Size = new System.Drawing.Size(75, 23);
             this.SaveConfigButton.TabIndex = 13;
             this.SaveConfigButton.Text = "Save";
-            this.SaveConfigButton.UseVisualStyleBackColor = true;
+            this.SaveConfigButton.UseVisualStyleBackColor = false;
             this.SaveConfigButton.Click += new System.EventHandler(this.SaveConfigButton_ClickAsync);
             // 
             // LoadConfigButton
             // 
+            this.LoadConfigButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
             this.LoadConfigButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(28)))), ((int)(((byte)(37)))));
             this.LoadConfigButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoadConfigButton.Location = new System.Drawing.Point(141, 226);
+            this.LoadConfigButton.Location = new System.Drawing.Point(153, 226);
             this.LoadConfigButton.Name = "LoadConfigButton";
             this.LoadConfigButton.Size = new System.Drawing.Size(75, 23);
             this.LoadConfigButton.TabIndex = 14;
             this.LoadConfigButton.Text = "Load";
-            this.LoadConfigButton.UseVisualStyleBackColor = true;
+            this.LoadConfigButton.UseVisualStyleBackColor = false;
             this.LoadConfigButton.Click += new System.EventHandler(this.LoadConfigButton_ClickAsync);
             // 
             // StopButton
             // 
+            this.StopButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
             this.StopButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(28)))), ((int)(((byte)(37)))));
             this.StopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StopButton.Location = new System.Drawing.Point(594, 45);
+            this.StopButton.Location = new System.Drawing.Point(476, 45);
             this.StopButton.Name = "StopButton";
             this.StopButton.Size = new System.Drawing.Size(75, 23);
             this.StopButton.TabIndex = 15;
             this.StopButton.Text = "Stop";
-            this.StopButton.UseVisualStyleBackColor = true;
+            this.StopButton.UseVisualStyleBackColor = false;
             this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
             // 
             // StartButton
             // 
+            this.StartButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
             this.StartButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(28)))), ((int)(((byte)(37)))));
             this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StartButton.Location = new System.Drawing.Point(440, 45);
+            this.StartButton.Location = new System.Drawing.Point(322, 45);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(75, 23);
             this.StartButton.TabIndex = 16;
             this.StartButton.Text = "Start";
-            this.StartButton.UseVisualStyleBackColor = true;
+            this.StartButton.UseVisualStyleBackColor = false;
             this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // ForceBackupButton
             // 
+            this.ForceBackupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
             this.ForceBackupButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(28)))), ((int)(((byte)(37)))));
             this.ForceBackupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ForceBackupButton.Location = new System.Drawing.Point(594, 107);
+            this.ForceBackupButton.Location = new System.Drawing.Point(476, 107);
             this.ForceBackupButton.Name = "ForceBackupButton";
             this.ForceBackupButton.Size = new System.Drawing.Size(75, 23);
             this.ForceBackupButton.TabIndex = 17;
             this.ForceBackupButton.Text = "FBackup";
-            this.ForceBackupButton.UseVisualStyleBackColor = true;
+            this.ForceBackupButton.UseVisualStyleBackColor = false;
             this.ForceBackupButton.Click += new System.EventHandler(this.ForceBackupButton_Click);
             // 
             // BackupLabel
@@ -257,7 +262,7 @@ namespace MySQL_Backup {
             this.BackupLabel.AutoSize = true;
             this.BackupLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BackupLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(0)))), ((int)(((byte)(14)))));
-            this.BackupLabel.Location = new System.Drawing.Point(594, 228);
+            this.BackupLabel.Location = new System.Drawing.Point(458, 225);
             this.BackupLabel.Name = "BackupLabel";
             this.BackupLabel.Size = new System.Drawing.Size(93, 21);
             this.BackupLabel.TabIndex = 18;
@@ -265,14 +270,15 @@ namespace MySQL_Backup {
             // 
             // RestoreButton
             // 
+            this.RestoreButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
             this.RestoreButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(28)))), ((int)(((byte)(37)))));
             this.RestoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RestoreButton.Location = new System.Drawing.Point(440, 107);
+            this.RestoreButton.Location = new System.Drawing.Point(322, 107);
             this.RestoreButton.Name = "RestoreButton";
             this.RestoreButton.Size = new System.Drawing.Size(75, 23);
             this.RestoreButton.TabIndex = 19;
             this.RestoreButton.Text = "Restore";
-            this.RestoreButton.UseVisualStyleBackColor = true;
+            this.RestoreButton.UseVisualStyleBackColor = false;
             this.RestoreButton.Click += new System.EventHandler(this.RestoreButton_Click);
             // 
             // MinimizedBox
@@ -282,7 +288,6 @@ namespace MySQL_Backup {
             this.MinimizedBox.BalloonTipTitle = "RED-V.cc";
             this.MinimizedBox.Icon = ((System.Drawing.Icon)(resources.GetObject("MinimizedBox.Icon")));
             this.MinimizedBox.Text = "RED-V.cc";
-            this.MinimizedBox.Visible = true;
             this.MinimizedBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.MinimizedBox_MouseDoubleClick);
             // 
             // BackupWorker
@@ -299,7 +304,7 @@ namespace MySQL_Backup {
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.ClientSize = new System.Drawing.Size(768, 443);
+            this.ClientSize = new System.Drawing.Size(583, 443);
             this.Controls.Add(this.RestoreButton);
             this.Controls.Add(this.BackupLabel);
             this.Controls.Add(this.ForceBackupButton);
@@ -322,6 +327,8 @@ namespace MySQL_Backup {
             this.Controls.Add(this.DatabaseLabel);
             this.ForeColor = System.Drawing.Color.Silver;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(599, 482);
+            this.MinimumSize = new System.Drawing.Size(599, 482);
             this.Name = "MainForm";
             this.Text = "MySQL Backup | RED-V.cc";
             this.Resize += new System.EventHandler(this.MainForm_Resize);

@@ -5,6 +5,11 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <RootNamespace>MySQL_Backup</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject>MySQL_Backup.Program</StartupObject>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <SignAssembly>false</SignAssembly>
+    <DelaySign>false</DelaySign>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>
